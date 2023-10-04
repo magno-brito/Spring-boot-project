@@ -4,9 +4,16 @@
 
         <title> My Second HTML page </title>
     </head>
-    <body style="font-size:100pt;text-align:center;background-color:cyan">
-        <p> Esta é minha segunda página </p>
-        <p> ${name} </p>
+    <body style="font-size:14pt;text-align:center;background-color:gray">
+        <h1>This is my initial page</h1>
+        <pre> ${errorMessage} </pre>
+        <form method="post">
+            Name: <input type="text" name="name"><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit" name="Submit">
+
+        </form>
+
 
     </body>
 </html>
