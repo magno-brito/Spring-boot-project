@@ -9,16 +9,17 @@ import java.util.List;
 @Service
 public class ToDoService {
     private static List<ToDo> todos = new ArrayList<ToDo>();
+    private static int todosCount = 0;
 
     static {
         todos.add(new ToDo(
-                1,
+                ++todosCount,
                 "Alura",
                 "Docker",
                 LocalDate.now(),
                 true));
         todos.add(new ToDo(
-                2,
+                ++todosCount,
                 "Alura",
                 "Swarm",
                 LocalDate.now(),
@@ -28,6 +29,15 @@ public class ToDoService {
 
     public List<ToDo> findByUserName(String username) {
         return todos;
+    }
+
+    public void addTodos(
+            String username,
+            String description,
+            LocalDate localDate,
+            boolean done) {
+        var todo = new ToDo(++todosCount, username, description, localDate, done);
+        todos.add(todo);
     }
 
 }
