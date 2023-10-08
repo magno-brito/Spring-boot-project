@@ -6,9 +6,9 @@
         <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
         <title>List of To Dos</title>
     </head>
-    <body style="font-size:14pt;text-align:center;background-color:gray">
+    <body style="font-size:14pt;text-align:center;background-color:#3006A2;color: white;">
 
-    <div class="container">
+    <div class="container" style="background-color: #6267EF; margin-left:30%; margin-right: 30%; border-radius: 10px;padding:20px">
             <h1>Welcome to my Spring Boot Course Project</h1>
              <div> User: ${name} </div>
             <table class="table">
