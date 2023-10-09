@@ -1,8 +1,10 @@
 package com.parte2.mywebapp.todo;
 
 
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -25,17 +27,32 @@ public class ToDoController {
 
     @RequestMapping(value="add-todo", method = RequestMethod.GET)
     public String showListToDo(ModelMap model) {
+        String username = (String)model.get("name");
+        ToDo todo = new ToDo(0, username,"", LocalDate.now(), false );
+        model.put("todo", todo);
         return "todo";
     }
 
     @RequestMapping(value="add-todo", method = RequestMethod.POST)
-    public String addListToDo(@RequestParam String description, ModelMap model) {
-       String username =  (String)model.get("name");
+    public String addListToDo( ModelMap model, @Valid ToDo todo, BindingResult result) {
+       if(result.hasErrors()) {
+           model.addAttribute("todo", todo);
+           return "todo";
+       }
+        String username =  (String)model.get("name");
         toDoService.addTodos(
                 username,
-                description,
+                todo.getDescription(),
                 LocalDate.now(),
                 false);
         return "redirect:list-todos";
     }
+
+    @RequestMapping("delete-todo")
+    public String deleteToDo(@RequestParam int id) {
+        toDoService.deleteById(id);
+        return "redirect:list-todos";
+
+    }
+
 }
