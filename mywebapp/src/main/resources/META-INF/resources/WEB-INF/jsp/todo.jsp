@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html style="margin-left:40%; margin-right:40%">
     <head>
@@ -11,10 +12,14 @@
     <div class="container" style="background-color: #6267EF; margin-left:30%; margin-right: 30%; border-radius: 10px;padding:20px">
             <h1>Enter ToDo Details</h1>
              <div>
-                <form method="post">
-                    Description: <input type="text" name="description"/>
+                <form:form method="post" modelAttribute="todo">
+                    Description: <form:input type="text" path="description"
+                        required="required" />
+                        <form:errors path="description" cssClass="text-warning"/>
+                        <form:input type="hidden" path="done"/>
+                        <form:input type="hidden" path="id"/>
                     <input type="submit" class="btn btn-success"/>
-                </form>
+                </form:form>
              </div>
 
 

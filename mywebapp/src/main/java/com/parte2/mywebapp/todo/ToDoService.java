@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 @Service
 public class ToDoService {
@@ -38,6 +39,11 @@ public class ToDoService {
             boolean done) {
         var todo = new ToDo(++todosCount, username, description, localDate, done);
         todos.add(todo);
+    }
+
+    public void deleteById(int id) {
+        Predicate<? super ToDo> predicate = todo -> todo.getId() == id;
+        todos.removeIf(predicate);
     }
 
 }
