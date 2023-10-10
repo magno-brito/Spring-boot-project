@@ -5,12 +5,23 @@
         <title> Welcome Page</title>
     </head>
     <body style="font-size:14pt;text-align:center;background-color:#3006A2;color: white;">
-        <div class="container" style="background-color: #6267EF; margin-left:30%; ">
-            <h1>Welcome to my Spring Boot Course Project</h1>
+     <nav class="navbar navbar-expand-md navbar-light bg-light">
+        	<div class="collapse navbar-collapse">
+        		<ul class="navbar-nav">
+        			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        			<li class="nav-item"><a class="nav-link" href="/list-todos">ToDos</a></li>
+        		</ul>
+        	</div>
+        	<ul class="navbar-nav">
+        		<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        	</ul>
+        </nav>
+        <div  style="background-color: #6267EF; padding:20pt ">
+            <h1 style="margin-bottom:20pt">Welcome to my Spring Boot Course Project</h1>
             <p> Your name: ${name} </p>
             <p> Your password: ${password} </p>
             <div>
-                <a href="list-todos"> Manage your todos </a>
+                <a style="color:yellow" href="list-todos"> Manage your todos </a>
 
             </div>
         </div>
