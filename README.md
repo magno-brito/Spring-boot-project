@@ -10,7 +10,28 @@ This is my Spring Boot project from the course [Learn Spring Boot 3 in 100 steps
 - Postman
 - HTML and CSS
 - JSP
+- JDBC
+- JPA
+- Lombok
 
 ## A view of the pages
 
+The ToDo page
+
+![image](https://github.com/magno-brito/Spring-boot-project/assets/84158231/b64ea597-e81d-439e-b921-08ec7b8dabf3)
+
+The Database H2
+
+![image](https://github.com/magno-brito/Spring-boot-project/assets/84158231/49cdd4f8-86fb-489d-88fb-39edfc6ad948)
+
+
+
 ## Notes from the journey
+
+### Spring Data
+When we add Data JPA (Jacarta Persistence API) in our project, spring boot auto configuration does some things like initialize JPA and spring data JPA frameworks.
+We also added H2 database and with the annotation @Entity in our model class, we can create our database without making it in a file. The setup connection is also made from the application to the in-memory database using the Spring Data.
+
+We also used JDBC (Java Database Connectivity) to make some operations in our database like findById or delete some data. Using jdbc can be tricky, this is why we prefer JPA. It's faster and we write less code. 
+
+Using the annotation @Repository, we created a interface that extended JpaRepository interface. We also created a repository instance of this interface to make operations in the database like findById, save and delete. 
