@@ -35,3 +35,34 @@ We also added H2 database and with the annotation @Entity in our model class, we
 We also used JDBC (Java Database Connectivity) to make some operations in our database like findById or delete some data. Using jdbc can be tricky, this is why we prefer JPA. It's faster and we write less code. 
 
 Using the annotation @Repository, we created a interface that extended JpaRepository interface. We also created a repository instance of this interface to make operations in the database like findById, save and delete. 
+
+### Using JUnit and Mockito
+I used JUnit and Mockito to run some tests in my application. To do this tests we need to use annotations like @Mock and @Test. I also needed to add the @ExtendWith to  avoid null instances in the class.
+
+```
+@ExtendWith(MockitoExtension.class)
+public class TestingMockito {
+
+    @Mock
+    private ToDo todo;
+
+    @Mock
+    private TodoRepository repository;
+
+    @InjectMocks
+    private ToDoControllerJpa todoControllerJpa;
+
+
+    @Test
+    void testRepository() {
+        repository.deleteById(1);
+
+    }
+
+}
+
+```
+
+
+
+
