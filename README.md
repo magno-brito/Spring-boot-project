@@ -18,11 +18,13 @@ This is my Spring Boot project from the course [Learn Spring Boot 3 in 100 steps
 
 The ToDo page
 
-![image](https://github.com/magno-brito/Spring-boot-project/assets/84158231/b64ea597-e81d-439e-b921-08ec7b8dabf3)
+<img src="https://github.com/magno-brito/Spring-boot-project/assets/84158231/b64ea597-e81d-439e-b921-08ec7b8dabf3"  width="70%" height="70%">
+
 
 The Database H2
 
-![image](https://github.com/magno-brito/Spring-boot-project/assets/84158231/49cdd4f8-86fb-489d-88fb-39edfc6ad948)
+<img src="https://github.com/magno-brito/Spring-boot-project/assets/84158231/49cdd4f8-86fb-489d-88fb-39edfc6ad948" width="70%" height="70%">
+
 
 
 
